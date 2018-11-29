@@ -1,0 +1,96 @@
+{
+  "cifar10": {
+    "url": "https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz",
+    "filename": "cifar-10-python.tar.gz",
+    "tgz_md5": "c58f30108f718f92721af3b95e74349a",
+    "data_dir": "datasets/cifar10",
+    "use_bgr": false,
+    "data_folder": "cifar-10-batches-py",
+    "meta_file": "batches.meta",
+    "train_ids_file": "train_ids.txt",
+    "val_ids_file": "val_ids.txt",
+    "test_ids_file": "test_ids.txt"
+  },
+
+  "dataset": {
+    "type": "cifar10",
+    "batch_size": 16,
+    "img_nc": 3,
+    "target_nc": 1,
+    "image_size": 32,
+    "serial_batches": false,
+    "drop_last_batch": true,
+    "n_threads": 1
+  },
+  "dataset_train": {
+    "n_threads": 3
+  },
+  "dataset_val": {
+    "serial_batches": true
+  },
+  "dataset_test": {
+    "batch_size": 1,
+    "drop_last_batch": false,
+    "n_prev_frames": 0,
+    "serial_batches": true
+  },
+
+  "model": {
+    "load_epoch": -1,
+    "type": "model1",
+    "master_gpu": 0,
+    "reg_gpus": [0]
+  },
+
+  "train": {
+    "nepochs_no_decay": 10,
+    "nepochs_decay": 90,
+    "reg_lr": 0.1,
+    "num_iters_validate": 10
+  },
+
+  "logs": {
+    "print_freq_s": 5,
+    "display_freq_s": 180,
+    "save_latest_freq_s": 3600
+  },
+
+  "networks": {
+    "reg": {
+      "type": "resnet18",
+      "hyper_params": {
+        "num_classes": 10
+      }
+    }
+  },
+
+  "transforms_train": ["horz_flip", "normalize", "to_tensor"],
+  "transforms_val": ["horz_flip", "normalize", "to_tensor"],
+  "transforms_test": ["normalize", "to_tensor"],
+  "transforms": {
+    "to_tensor": {
+      "type": "to_tensor",
+      "general_args": {},
+      "perkey_args": {
+        "img": {}
+      }
+    },
+    "normalize": {
+      "type": "normalize",
+      "general_args": {
+        "mean": [0.485, 0.456, 0.406],
+        "std": [0.229, 0.224, 0.225]
+      },
+      "perkey_args": {
+        "img": {}
+      }
+    },
+    "horz_flip": {
+      "type": "rand_horz_flip",
+      "general_args": {},
+      "perkey_args": {
+        "img": {}
+      }
+    }
+  }
+}
