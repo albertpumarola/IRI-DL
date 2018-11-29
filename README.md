@@ -58,7 +58,7 @@ sudo reboot
 Simply clone the repo:
 ```
 cd /path/to/desired/folder/
-git clone <repo_link>
+git clone https://github.com/albertpumarola/IRI-DL.git
 ```
 
 ## Set IDE
