@@ -1,0 +1,7 @@
+{
+  "networks": {
+    "reg": {
+      "type": "vgg11"
+    }
+  }
+}
