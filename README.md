@@ -1,6 +1,6 @@
 # IRI-DL
 
-This repo contains the code structure I use for all my research. I designed it with the purpose of having a generic framework in which new research ideas could be quickly evaluated. For this particular repo, as an example, the framework has been configured to solve object classification. 
+IRI deep learning project example. This repo contains the code structure I use for all my research. I designed it with the purpose of having a generic framework in which new research ideas could be quickly evaluated. For this particular repo, as an example, the framework has been configured to solve object classification. 
 
 If you have any doubt do not hesitate to contact me at `apumarola@iri.upc.edu`.
 
