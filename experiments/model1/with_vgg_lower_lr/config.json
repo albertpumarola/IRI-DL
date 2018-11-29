@@ -1,0 +1,11 @@
+{
+  "train": {
+    "reg_lr": 0.01
+  },
+
+  "networks": {
+    "reg": {
+      "type": "vgg11"
+    }
+  }
+}
