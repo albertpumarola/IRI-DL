@@ -12,7 +12,7 @@ sudo apt-get upgrade
 ```
 #### 1. Nvidia Driver 
 ```
-sudo apt install nvidia-384*
+sudo apt install nvidia-415*
 sudo reboot
 ```
 #### 2. MiniConda
@@ -29,7 +29,7 @@ sudo reboot
     ```
 2. Install Pytorch
     ```
-    conda install pytorch torchvision -c pytorch
+    conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
     ```
 3. Install other rand dependencies
     ```
