@@ -12,7 +12,10 @@ sudo apt-get upgrade
 ```
 #### 1. Nvidia Driver 
 ```
-sudo apt install nvidia-415*
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+sudo ubuntu-drivers devices
+sudo apt install nvidia-driver-440
 sudo reboot
 ```
 #### 2. MiniConda
